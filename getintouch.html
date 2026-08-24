@@ -5,126 +5,101 @@
   <title>Get in Touch - Bluewell Pharmaceuticals</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin:0; background:#f4f6f9; }
+
+    .contact-wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .contact-info {
+      flex: 1;
+      background: linear-gradient(135deg, #0D1B2A, #1E88E5);
+      color: #fff;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-info h2 { font-size: 32px; margin-bottom: 20px; }
+    .contact-info p { margin-bottom: 15px; font-size: 16px; }
+    .contact-info li { margin-bottom: 10px; list-style:none; font-size: 15px; }
+
+    .contact-form {
+      flex: 1;
+      background: #fff;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-form h2 { font-size: 28px; margin-bottom: 20px; color:#0D1B2A; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display:block; margin-bottom:5px; font-weight:600; }
+    .form-group input, .form-group textarea, .form-group select {
+      width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; font-size:15px;
+    }
+
+    .btn {
+      padding:14px; background:#43A047; color:#fff; border:none; border-radius:8px;
+      font-weight:600; cursor:pointer; transition:background .3s;
+    }
+    .btn:hover { background:#2E7D32; }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .contact-wrapper { flex-direction: column; }
+      .contact-info, .contact-form { padding:40px 20px; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ================= HEADER (same as index.html) ================= -->
-<header>
-    <div class="logo">
-        <img src="bluewell-pharmaceuticals-logo.png" alt="Bluewell Pharmaceuticals Logo">
-        <div class="logo-text">
-            <h2>BLUEWELL</h2>
-            <span>PHARMACEUTICALS</span>
-        </div>
-    </div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#products">Products</a>
-        <a href="index.html#contact">Contact</a>
-    </nav>
-</header>
-<br><br><br>
-<!-- ================= CONTACT FORM ================= -->
-<section class="contact-page">
-  <div class="contact-container">
-    <div class="contact-info">
-      <h2>Got a question?</h2>
-      <p>We’d love to hear from you. Whether it’s about careers, products, or support — our team is here to help.</p>
-      <ul>
-        <li><i class="fas fa-map-marker-alt"></i> 608 Neelaya, Near Hindustan Petrol Pump, Talegaon, Pune 410506</li>
-        
-        <li><i class="fas fa-envelope"></i> bluewellpharmaceutical@gmail.com</li>
-      </ul>
-    </div>
-
-    <div class="contact-form-box">
-      <!-- Form posts to sendmail.php -->
-      <form action="sendmail.php" method="POST">
-        <div class="form-group">
-          <label for="topic">What can we help with?*</label>
-          <select id="topic" name="topic" required>
-            <option value="">Select an option</option>
-            <option value="careers">Careers</option>
-            <option value="products">Products</option>
-            <option value="services">Services</option>
-            <option value="support">Support</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="name">Full Name*</label>
-          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Mobile No.*</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}">
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email*</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message*</label>
-          <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn">Submit</button>
-      </form>
-    </div>
+<div class="contact-wrapper">
+  <!-- Left side: Info -->
+  <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p>We’d love to hear from you. Reach out for careers, product inquiries, or support.</p>
+    <ul>
+      <li><i class="fas fa-map-marker-alt"></i> 608 Neelaya, Near Hindustan Petrol Pump, Talegaon, Pune 410506</li>
+      <li><i class="fas fa-envelope"></i> bluewellpharmaceutical@gmail.com</li>
+      <li><i class="fas fa-phone"></i></li>
+    </ul>
   </div>
-</section>
 
-<!-- ================= FOOTER (dark theme) ================= -->
-<footer>
-    <div class="footer-brand">BLUEWELL PHARMACEUTICALS</div>
-
-    <div class="footer-sections">
-        <div class="footer-section">
-            <h4>Legal</h4>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Compliance</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h4>Services</h4>
-            <ul>
-                <li><a href="index.html#services">Quality Manufacturing</a></li>
-                <li><a href="index.html#services">Research & Development</a></li>
-                <li><a href="index.html#services">Distribution</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h4>About</h4>
-            <ul>
-                <li><a href="index.html#about">Our Mission</a></li>
-                <li><a href="index.html#about">Leadership</a></li>
-                <li><a href="index.html#about">Careers</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-
-    <div class="legal">
-        © 2026 Bluewell Pharmaceuticals. All Rights Reserved.
-    </div>
-</footer>
+  <!-- Right side: Form -->
+  <div class="contact-form">
+    <h2>Send us a Message</h2>
+    <form action="sendmail.php" method="POST">
+      <div class="form-group">
+        <label for="name">Full Name*</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="topic">Topic*</label>
+        <select id="topic" name="topic" required>
+          <option value="">Select an option</option>
+          <option value="careers">Careers</option>
+          <option value="products">Products</option>
+          <option value="services">Services</option>
+          <option value="support">Support</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message*</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</div>
 
 </body>
 </html>
