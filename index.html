@@ -208,6 +208,25 @@
     <a href="https://mail.google.com/" class="btn">Send Email</a>
 </section>
 <footer>
+
+<script>
+    const revealItems = document.querySelectorAll('section:not(.hero), footer');
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        revealItems.forEach((item) => item.classList.add('reveal-on-scroll'));
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+    }
+</script>
     <div class="footer-brand">BLUEWELL PHARMACEUTICALS</div>
 
     <div class="footer-sections">

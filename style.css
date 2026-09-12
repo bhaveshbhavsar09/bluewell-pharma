@@ -18,6 +18,42 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 section { padding: 90px 8%; }
 
+/* Scroll reveal */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-on-scroll .card {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease, box-shadow .3s ease;
+    transition-delay: .1s;
+}
+.reveal-on-scroll.is-visible .card {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-on-scroll .card:nth-child(2) { transition-delay: .2s; }
+.reveal-on-scroll .card:nth-child(3) { transition-delay: .3s; }
+.reveal-on-scroll .card:nth-child(4) { transition-delay: .4s; }
+.reveal-on-scroll .card:nth-child(5) { transition-delay: .5s; }
+.reveal-on-scroll .card:nth-child(6) { transition-delay: .6s; }
+.reveal-on-scroll .card:nth-child(7) { transition-delay: .7s; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 /* ===================================
    HEADER
 =================================== */
