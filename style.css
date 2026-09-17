@@ -45,9 +45,38 @@ section { padding: 90px 8%; }
 .reveal-on-scroll .card:nth-child(6) { transition-delay: .6s; }
 .reveal-on-scroll .card:nth-child(7) { transition-delay: .7s; }
 
+/* Image reveal on scroll */
+.reveal-on-scroll .about-left .about-img {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+.reveal-on-scroll.is-visible .about-left .about-img {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-on-scroll .about-right .about-img {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+.reveal-on-scroll.is-visible .about-right .about-img {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-on-scroll.is-visible .about-img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .reveal-on-scroll {
+    .reveal-on-scroll,
+    .reveal-on-scroll .about-left .about-img,
+    .reveal-on-scroll .about-right .about-img,
+    .reveal-on-scroll .card {
         opacity: 1;
         transform: none;
         transition: none;
