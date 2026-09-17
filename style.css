@@ -38,7 +38,22 @@ section { padding: 90px 8%; }
     transform: translateY(0);
 }
 .card.reveal-on-scroll.is-visible:hover {
+    transform: translateY(-10px) scale(1.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Products card side slide reveal */
+#products .card.reveal-on-scroll:nth-child(odd) {
+    transform: translateX(-60px);
+}
+#products .card.reveal-on-scroll:nth-child(even) {
+    transform: translateX(60px);
+}
+#products .card.reveal-on-scroll.is-visible {
+    transform: translateX(0);
+}
+#products .card.reveal-on-scroll.is-visible:hover {
+    transform: translateY(-8px) scale(1.03);
 }
 
 /* Image reveal on scroll */
@@ -72,10 +87,11 @@ section { padding: 90px 8%; }
     .reveal-on-scroll,
     .reveal-on-scroll .about-left .about-img,
     .reveal-on-scroll .about-right .about-img,
-    .reveal-on-scroll .card {
-        opacity: 1;
-        transform: none;
-        transition: none;
+    .card.reveal-on-scroll,
+    #products .card.reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
 }
 
