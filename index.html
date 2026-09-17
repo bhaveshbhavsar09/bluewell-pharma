@@ -277,7 +277,7 @@
     <footer>
 
         <script>
-            const revealItems = document.querySelectorAll('section:not(.hero), footer');
+            const revealItems = document.querySelectorAll('section:not(.hero), footer, .card');
 
             if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 revealItems.forEach((item) => item.classList.add('reveal-on-scroll'));
